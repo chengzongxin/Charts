@@ -1,3 +1,6 @@
+1. 实现了蜡烛图标注最小值和最大值
+2. 不裁剪Y轴label
+
 **Version 3.5.0**, synced to [MPAndroidChart #f6a398b](https://github.com/PhilJay/MPAndroidChart/commit/f6a398b)
 
 ![alt tag](https://raw.github.com/danielgindi/Charts/master/Assets/feature_graphic.png)
