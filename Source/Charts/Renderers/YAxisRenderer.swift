@@ -147,11 +147,21 @@ open class YAxisRenderer: AxisRendererBase
         for i in stride(from: from, to: to, by: 1)
         {
             let text = yAxis.getFormattedLabel(i)
+            let avoidFirsLastClipPadding :CGFloat = 5.0
+            var pointLable = CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset)
+            if i == 0 {
+                // 最下面的label
+                pointLable.y -= avoidFirsLastClipPadding;
+            }
+            if i == to - 1 {
+                // 最上面的label
+                pointLable.y += avoidFirsLastClipPadding;
+            }
             
             ChartUtils.drawText(
                 context: context,
                 text: text,
-                point: CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset),
+                point: pointLable,
                 align: textAlign,
                 attributes: [.font: labelFont, .foregroundColor: labelTextColor]
             )
