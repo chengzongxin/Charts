@@ -281,7 +281,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
     
     // 计算绘制位置并绘制文本，注意坐标值(相对于图标)转像素值(相对于手机屏幕)
     fileprivate func calculateTextPosition(_ valueText: String, originPoint: inout CGPoint, lowestVisibleX: CGFloat, highestVisibleX: CGFloat, isMaxValue: Bool){
-        let attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font: UIFont.init(name: "Helvetica", size: 12) ?? UIColor.black, NSAttributedStringKey.foregroundColor: UIColor(red: 231/255.0, green: 109/255.0, blue: 66/255.0, alpha: 1.0)]
+        let attributes: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: UIFont.init(name: "Helvetica", size: 12) ?? UIColor.black, NSAttributedString.Key.foregroundColor: UIColor(red: 231/255.0, green: 109/255.0, blue: 66/255.0, alpha: 1.0)]
         
         let stringText = NSString.init(string: "←\(valueText)")
         
@@ -383,7 +383,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                                 x: pt.x,
                                 y: pt.y - yOffset),
                             align: .center,
-                            attributes: [NSAttributedStringKey.font: valueFont, NSAttributedStringKey.foregroundColor: dataSet.valueTextColorAt(j)])
+                            attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: dataSet.valueTextColorAt(j)])
                     }
                     
                     if let icon = e.icon, dataSet.isDrawIconsEnabled
