@@ -147,7 +147,7 @@ open class YAxisRenderer: AxisRendererBase
         for i in stride(from: from, to: to, by: 1)
         {
             let text = yAxis.getFormattedLabel(i)
-            let avoidFirsLastClipPadding :CGFloat = 5.0
+            let avoidFirsLastClipPadding :CGFloat = 7.0
             var pointLable = CGPoint(x: fixedPosition + xOffset, y: positions[i].y + offset)
             if i == 0 {
                 // 最下面的label
